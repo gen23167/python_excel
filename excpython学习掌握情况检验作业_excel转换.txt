@@ -1,0 +1,47 @@
+Have two excel:
+
+Excel1:
+
+STAFF_MONTHLY_WORKING_HOURS has below columns:
+	staff_id,
+	staff_name,
+	current_month_start_timestamp,
+	current_month_end_timestamp,
+	monthly_working_hours,
+
+the key is staff_id and this excel recording the staff monthly working hours 。
+
+
+Another excel 
+DAILY_STAFF_BUG_FIXING_STATUS has below columns:
+	Staff_id,
+	Date,
+	estimation_fix_hours,
+	last_update_timestamp,
+	bug_summary,
+	bug_status,
+
+these excel recording staff each day bug status, one staff should have more than 20 records in the excel.
+
+
+Please develop a Python script to meet below requirements:
+	1. read data from excel with pandas.
+	2. remove duplicate records from the excel.
+	3. convert excel2 last_update_timestamp to three columns: year, month, date 
+	4. calculate staff monthly total estimation_hours by date in excel2
+	5. merge excel1 and 2 by staff_id and monthly number
+	6. After merged, add a new column “performance”, if totally_monthly_estimation_hours > working_hours then setup performance as high, < as low.
+	7. if performance is low, then calculate the gap hours and convert from int to string type
+	8. save above results as json file, csv file  and mongodb。
+	9. each excel should have at least 20 rows 
+	10.should have try and except in the code
+	11.use class and multiple call modules and package to develop
+	12.each item should cover Forward and Reverse case
+
+
+这个是我们最后作业的要求，请大家抽时间阅读和写代码作为对大家学习的检验，如果有哪一块不懂了就提出来，给大家一周时间去完成，下个星期六晚上截止，代码可以在内部，也可以在外部，到时候zoom 现场演示
+
+
+大概意思是 要求每个功能需覆盖正向案例和反向案例，即需要同时处理正常情况和异常/边界情况。--待确认
+
+
